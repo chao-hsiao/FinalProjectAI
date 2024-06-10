@@ -17,7 +17,7 @@ class ml_backend:
             frequency_penalty=0.36,
             presence_penalty=0.75
         )
-        return self.parse_email(response.choices[0].text)
+        return response.choices[0].text
 
     def replace_spaces_with_pluses(self, sample):
         """Returns a string with each space being replaced with a plus so the email hyperlink can be formatted properly"""
