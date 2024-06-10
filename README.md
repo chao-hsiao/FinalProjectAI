@@ -2,7 +2,7 @@
 
 ## DEMO
 
-You can access the live demo of the Interactive Email Generator App <a href="http://proxmoxch.duckdns.org" target="_blank">here</a>.
+You can access the live demo of the Interactive Email Generator App [here](http://proxmoxch.duckdns.org).
 
 ## Description
 
