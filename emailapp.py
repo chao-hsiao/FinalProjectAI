@@ -1,6 +1,12 @@
 import streamlit as st
 import openai
+import os
 from ml_backend import ml_backend
+
+os.environ["STREAMLIT_EMAIL"] = "xsyao.ch.cs10@nycu.edu.tw"
+os.environ["STREAMLIT_SERVER_HEADLESS"] = "true"
+os.environ["STREAMLIT_SERVER_ENABLECORS"] = "false"
+os.environ["STREAMLIT_SERVER_PORT"] = "80"
 
 st.title("Interactive Email Generator App")
 st.text("""
