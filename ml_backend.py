@@ -8,12 +8,9 @@ class ml_backend:
 
     def generate_email(self, userPrompt="Write an email to professor [Professor’s Last Name] regarding on wanting to join course [Course Name] from [Your Name]", start="Dear", slider=64):
         """Returns a generated email using GPT-3.5 with a certain prompt and starting sentence"""
-        response = openai.chat.completions.create(
-            model="gpt-3.5-turbo-instruct",  # Use the correct model name
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": f"{userPrompt}\n\n{start}"}
-            ],
+        response = openai.Completions.create(
+            engine="gpt-3.5-turbo-instruct",  # Use the correct model name
+            prompt=f"{userPrompt}\nIt should less then {slider} words in email\n\n{start}",
             temperature=0.71,
             max_tokens=800,
             top_p=1,
