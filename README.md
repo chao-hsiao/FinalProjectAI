@@ -13,7 +13,7 @@ As a university student, it is very common to write emails to dozens of people e
 ## Features
 
 - Configure Streamlit email settings directly within the app.
-- Generate personalized emails with a professional tone using GPT-3.5-turbo.
+- Generate personalized emails with a professional tone using gpt-3.5-turbo-instruct.
 - Automatically format emails for sending via Gmail.
 
 ## Setup Instructions
