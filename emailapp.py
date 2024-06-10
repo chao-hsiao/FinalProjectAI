@@ -27,7 +27,8 @@ backend = ml_backend()
 with st.form(key="form"):
     init_prompt = st.text_input("Initial prompt.")
     st.text(f"(Example: Write an email to professor [Professor’s Last Name’] regarding on wanting to join course [Course Name] from [Your Name])")
-
+    if not init_prompt:
+        init_prompt = "Write an email to professor [Professor’s Last Name’] regarding on wanting to join course [Course Name] from [Your Name]"
     
     slider = st.slider("How many characters do you want your email to be? ", min_value=64, max_value=750)
     st.text("(A typical email is usually 100-500 characters)")
@@ -36,13 +37,13 @@ with st.form(key="form"):
 
     if submit_button:
         with st.spinner("Transfoming the prompt"):
-            final_prompt = backend.transform_prompt(init_promt)
+            final_prompt = backend.transform_prompt(init_prompt)
 
         st.markdown("# Transsformed prompt")
         st.subheader(final_prompt)
 
         with st.spinner("Generating Email..."):
-            email_output = backend.generate_email(final_prompt, slider)
+            email_output = backend.generate_email(final_prompt, slider=slider)
 
         st.markdown("# Email Output:")
         st.subheader(email_output)
