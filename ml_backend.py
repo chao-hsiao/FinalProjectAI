@@ -8,26 +8,17 @@ class ml_backend:
 
     def generate_email(self, userPrompt="Write an email to professor [Professor’s Last Name’] regarding on wanting to join course [Course Name] from [Your Name]", start="Dear", slider=64):
         """Returns a generated email using GPT-3.5 with a certain prompt and starting sentence"""
-        try:
-            response = openai.Completion.create(
-                engine="gpt-3.5-turbo-instruct",  # Use the correct engine name for GPT-3.5
-                prompt=f"{userPrompt}\nTotal words in email should less than {slider} words\n\n{start}",
-                temperature=0.71,
-                max_tokens=800,
-                top_p=1,
-                frequency_penalty=0.36,
-                presence_penalty=0.75
-            )
-            return response.choices[0].text.strip()
-        except openai.error.AuthenticationError as e:
-            print("Authentication error: ", e)
-            return None
-        except openai.error.OpenAIError as e:
-            print("OpenAI API error: ", e)
-            return None
-        except Exception as e:
-            print("An unexpected error occurred: ", e)
-            return None
+
+        response = openai.Completion.create(
+            engine="gpt-3.5-turbo-instruct",  # Use the correct engine name for GPT-3.5
+            prompt=f"{userPrompt}\nTotal words in email should less than {slider} words\n\n{start}",
+            temperature=0.71,
+            max_tokens=800,
+            top_p=1,
+            frequency_penalty=0.36,
+            presence_penalty=0.75
+        )
+        return response.choices[0].text.strip()
 
 
     def replace_spaces_with_pluses(self, sample):
