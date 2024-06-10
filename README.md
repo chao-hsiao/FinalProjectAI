@@ -1,7 +1,3 @@
-Here is a README format that includes setup instructions for your Streamlit application:
-
----
-
 # Interactive Email Generator App
 
 ## Description
@@ -124,7 +120,3 @@ Feel free to fork this repository, make modifications, and submit pull requests.
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-
----
-
-This README format provides a comprehensive guide for setting up, running, and using your Streamlit application. It includes steps for installation, configuration, usage, and troubleshooting, making it easy for users to get started with your app.
