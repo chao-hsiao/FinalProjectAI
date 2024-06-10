@@ -48,11 +48,11 @@ with st.form(key="form"):
         with st.spinner("Transfoming the prompt"):
             final_prompt = backend.transform_prompt(init_prompt)
 
-        st.markdown("# Transsformed prompt")
+        st.markdown("# Transformed prompt")
         st.subheader(final_prompt)
 
         st.markdown("____")
-        
+
         with st.spinner("Generating Email..."):
             email_output = backend.generate_email(final_prompt, slider=slider)
 
