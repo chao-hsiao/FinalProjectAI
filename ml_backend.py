@@ -20,15 +20,16 @@ class ml_backend:
                 presence_penalty=0.75
             )
             return response.choices[0].text.strip()
-        except AuthenticationError as e:
+        except openai.error.AuthenticationError as e:
             print("Authentication error: ", e)
             return None
-        except OpenAIError as e:
+        except openai.error.OpenAIError as e:
             print("OpenAI API error: ", e)
             return None
         except Exception as e:
             print("An unexpected error occurred: ", e)
             return None
+
 
     def replace_spaces_with_pluses(self, sample):
         """Returns a string with each space being replaced with a plus so the email hyperlink can be formatted properly"""
