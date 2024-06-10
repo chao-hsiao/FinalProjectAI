@@ -46,14 +46,13 @@ with st.form(key="form"):
             email_output = backend.generate_email(final_prompt, slider=slider)
 
         st.markdown("# Email Output:")
-        st.subheader(email_output)
+        st.text(email_output)
 
         st.markdown("____")
         st.markdown("# Send Your Email")
         st.subheader("You can press the Generate Email Button again if you're unhappy with the model's output")
         
-        st.subheader("Otherwise:")
-        st.text(email_output)
+        st.subheader("Otherwise send the letter")
         url = "https://mail.google.com/mail/?view=cm&fs=1&to=&su=&body=" + backend.replace_spaces_with_pluses(email_output)
 
         st.markdown("[Click me to send the email]({})".format(url))

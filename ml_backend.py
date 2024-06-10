@@ -6,7 +6,7 @@ class ml_backend:
         # Ensure to use the correct base URL if you are using a custom API gateway
         # openai.api_base = 'https://api.pawan.krd/v1'  # Uncomment if needed
 
-    def generate_email(self, userPrompt="Write an email to professor [Professor’s Last Name] regarding on wanting to join course [Course Name] from [Your Name]", start="Dear", slider=64):
+    def generate_email(self, userPrompt="Write an email to professor [Professor’s Last Name] regarding on wanting to join course [Course Name] from [Your Name]", start="", slider=64):
         """Returns a generated email using GPT-3.5 with a certain prompt and starting sentence"""
         response = openai.completions.create(
             model="gpt-3.5-turbo-instruct",  # Use the correct model name
