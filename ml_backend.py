@@ -23,7 +23,7 @@ class ml_backend:
         """Returns a string with each space being replaced with a plus so the email hyperlink can be formatted properly"""
         if sample is None:
             return ""
-        return '+'.join(sample.split())
+        return urllib.parse.quote(sample)
 
     def transform_prompt(self, init_prompt):
         return init_prompt
