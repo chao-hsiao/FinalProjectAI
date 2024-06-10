@@ -46,7 +46,7 @@ with st.form(key="form"):
             email_output = backend.generate_email(final_prompt, slider=slider)
 
         st.markdown("# Email Output:")
-        st.text(email_output)
+        st.subheader(email_output)
 
         st.markdown("____")
         st.markdown("# Send Your Email")
