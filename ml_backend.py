@@ -1,6 +1,14 @@
 import openai
 import urllib.parse
 
+import torch
+from transformers import DistilBertForQuestionAnswering
+from transformers import AutoTokenizer
+import warnings
+warnings.simplefilter("ignore")
+
+weight_path = "mymodel_2"
+
 class ml_backend:
     def __init__(self):
         openai.api_key = 'sk-proj-JRUnxXSKBb0TWMJ4m7Q8T3BlbkFJvxqvMjBdcvCKqC3lrT9t'  # Replace with your actual API key
@@ -27,7 +35,53 @@ class ml_backend:
         return urllib.parse.quote(sample)
 
     def transform_prompt(self, init_prompt):
-        return init_prompt
+        # loading tokenizer
+        trained_checkpoint = "distilbert-base-uncased"
+        tokenizer = AutoTokenizer.from_pretrained(trained_checkpoint)
+        #loading the model
+
+        model = DistilBertForQuestionAnswering.from_pretrained(trained_checkpoint)
+        model.load_state_dict(torch.load(weight_path, map_location=torch.device('cpu')))
+        model.to(torch.device('cpu'))
+        model.eval()
+
+        questions=["who is writing this letter","who is going to receive this letter","what is the email about"]
+        # context = 'Write an email from James to Professor Martinez regarding a missed assignment deadline.'
+        answers = []
+        for i in range(3):
+            inputs = tokenizer(questions[i], init_prompt, return_tensors="pt")
+            with torch.no_grad():
+                outputs = model(**inputs)
+            start_logits,end_logits = outputs['start_logits'],outputs['end_logits']
+            # Find the tokens with the highest `start` and `end` scores.
+            answer_start = torch.argmax(start_logits)
+            answer_end = torch.argmax(end_logits)
+
+            predict_answer_tokens = inputs.input_ids[0, answer_start : answer_end + 1]
+            answers.append(tokenizer.decode(predict_answer_tokens) )
+
+        result_prompt_intention = "Craft an email from "+ answers[0] + " to "+ answers[1] + " regarding " + answers[2]
+
+        key_role = ['student','TA','school','professor']
+        role_spec = { 'student':"use a tone with some respect, but less formal and without the use of emotes. Exaggeration is acceptable.",
+                      'TA':"use a tone with some respect,  formal , but using weaker vocabulary. Emotes and Exaggeration is not acceptable.",
+                      'professor':"use a tone of great respect, very formal. Emotes and Exaggeration is not acceptable.",
+                      'school':"use a tone with some respect, formal, with precise and less wording. Emotes and Exaggeration is not acceptable."
+                      }
+        the_role = ""
+
+        for role in key_role:
+          if role in answers[1]:
+            the_role = role
+            break
+
+        result_prompt_spec = role_spec.get(the_role)
+        if(result_prompt_spec == None):
+          result_prompt_spec = "use a tone with some respect, formal, with precise and less wording. Emotes and Exaggeration is not acceptable."
+        result_prompt = result_prompt_intention + " " + result_prompt_spec
+        # print(result_prompt)
+
+        return result_prompt
 
     def parse_email(self, email_text):
         """Parses the email text to extract the subject and body"""
