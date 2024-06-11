@@ -10,7 +10,7 @@ Also, if TA need an API key, TA can ask 110550205 for it, since openAI will dete
 
 ## DEMO
 
-You can access the live demo of the Interactive Email Generator App [here](http://proxmoxch.duckdns.org). (Right now, it is not available)
+You can access the live demo of the Interactive Email Generator App [here](http://proxmoxch.duckdns.org). (It is not available right now)
 
 ## Description
 
