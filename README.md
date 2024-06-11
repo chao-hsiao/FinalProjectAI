@@ -4,6 +4,8 @@ The model will be available on the GitHub repo after 4 days, due to bandwidth re
 
 After downloading, move the model into ``` cd <repository_directory> ``` that you are going to clone.
 
+Also, if TA need an API key, TA can ask 110550205 for it, since openAI will detecte and disable a compromised key.
+
 # Interactive Email Generator App
 
 ## DEMO
@@ -52,6 +54,7 @@ This application is designed to help university students generate emails with th
 
    - Open the file named `PutYourAPIKeyInThisFile.txt` located in the root directory of the repository.
    - Paste your OpenAI API key into this file and save it.
+   - If TA need a key, TA can ask 110550205 for it.
 
 4. **Run the setup script:**
 
