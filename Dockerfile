@@ -3,6 +3,7 @@ FROM python:3.8-slim
 
 # Install Git, Git LFS, curl, and build essentials
 RUN apt-get update
+    pip install -r requirementss.txt
 
 # Set the working directory
 WORKDIR /app
