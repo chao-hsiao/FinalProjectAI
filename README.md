@@ -23,7 +23,7 @@ This application is designed to help university students generate emails with th
 ## Features
 
 - Configure Streamlit email settings directly within the app.
-- Generate personalized emails with a professional tone using gpt-3.5-turbo-instruct.
+- Generate personalized emails with a professional tone using GPT-3.5-turbo-instruct.
 - Automatically format emails for sending via Gmail.
 
 ## Setup Instructions
@@ -48,7 +48,12 @@ This application is designed to help university students generate emails with th
    pip install -r requirements.txt
    ```
 
-3. **Run the setup script:**
+3. **Add OpenAI API Key:**
+
+   - Open the file named `PutYourAPIKeyInThisFile.txt` located in the root directory of the repository.
+   - Paste your OpenAI API key into this file and save it.
+
+4. **Run the setup script:**
 
    Ensure that the script `setup.sh` is executable. If not, make it executable:
 
@@ -95,14 +100,12 @@ streamlit run emailapp.py
    streamlit run emailapp.py
    ```
 
-2. In your browser, enter
-
-   your email address in the "Configure Email" section and click "Set Email Configuration."
+2. In your browser, enter your email address in the "Configure Email" section and click "Set Email Configuration."
 
 3. Provide the initial prompt, for example:
    
    ```
-   Write an email to professor [Professor’s Last Name] regarding wanting to join course [Course Name] from [Your Name]
+   Write an email from James to Professor Martinez regarding a missed assignment deadline.
    ```
 
 4. Adjust the slider to your preferred email length and click "Generate Email."
