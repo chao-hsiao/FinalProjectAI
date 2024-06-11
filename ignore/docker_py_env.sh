@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Ensure the email argument is provided
 if [ -z "$1" ]; then
   echo "Usage: ./setup.sh your_email@example.com"
@@ -13,10 +15,10 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 sudo apt install docker-ce -y
 sudo usermod -aG docker ${USER}
-docker build
-docker run -it \
-    -p 8000:80 \
-    -e DISPLAY=$DISPLAY \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v $(pwd):/app my-python-env \
-    /bin/bash -c "./setup.sh $EMAIL && streamlit run emailapp.py"
+
+
+# Build the Docker image
+docker build -t my_streamlit_app .
+
+# Run the Docker container
+docker run --rm -it -p 80:8501 -v $(pwd):/app my_streamlit_app
