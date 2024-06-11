@@ -2,9 +2,9 @@
 
 The model will be available on the GitHub repo after 4 days, due to bandwidth restriction of Git LFS Data. (Today is 20240611, 2325)
 
-After downloading, move the model into ``` cd <repository_directory> ``` that you are going to clone.
+After downloading the model, move it into ``` cd <repository_directory> ``` that you are going to clone.
 
-Also, if TA need an API key, TA can ask 110550205 for it, since openAI will detecte and disable a compromised key.
+Also, if TA needs an API key, TA can ask 110550205 for it, since openAI will detecte and disable a compromised key.
 
 # Interactive Email Generator App
 
