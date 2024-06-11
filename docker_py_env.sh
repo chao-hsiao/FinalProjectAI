@@ -1,3 +1,11 @@
+# Ensure the email argument is provided
+if [ -z "$1" ]; then
+  echo "Usage: ./setup.sh your_email@example.com"
+  exit 1
+fi
+
+EMAIL=$1
+
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -11,5 +19,4 @@ docker run -it \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v $(pwd):/app my-python-env \
-    /bin/bash -c "./setup.sh xsyao.ch.cs10@nycu.edu.tw"
-    
+    /bin/bash -c "./setup.sh $EMAIL"
