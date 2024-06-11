@@ -25,10 +25,14 @@ RUN pip install -r requirements.txt
 # Copy the rest of the application code into the container
 COPY . .
 
+# Set build argument for email
+ARG EMAIL
+ENV EMAIL=${EMAIL}
+
 # Copy and run the setup script
 COPY setup.sh .
 RUN chmod +x setup.sh
-RUN ./setup.sh your_email@example.com
+RUN ./setup.sh ${EMAIL}
 
 # Expose the default Streamlit port
 EXPOSE 8501

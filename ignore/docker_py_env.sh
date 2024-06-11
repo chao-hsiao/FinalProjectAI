@@ -18,7 +18,7 @@ sudo usermod -aG docker ${USER}
 
 
 # Build the Docker image
-docker build -t my_streamlit_app .
+docker build --build-arg EMAIL=${EMAIL} -t my_streamlit_app .
 
 # Run the Docker container
 docker run --rm -it -p 80:80 -v $(pwd):/app my_streamlit_app
