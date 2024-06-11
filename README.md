@@ -1,8 +1,12 @@
+[click me to get our LLM model](https://drive.google.com/file/d/1INZNM3fpzg6O4s2aF7M3XMYbg3xV3DMh/view?usp=sharing)
+The model will be available on the GitHub repo after 4 days. (Today is 20240611, 2325)
+After downloading, move the model into ``` cd <repository_directory> ``` that you are going to clone.
+
 # Interactive Email Generator App
 
 ## DEMO
 
-You can access the live demo of the Interactive Email Generator App [here](http://proxmoxch.duckdns.org).
+You can access the live demo of the Interactive Email Generator App [here](http://proxmoxch.duckdns.org). (Right now, it is not available)
 
 ## Description
 
