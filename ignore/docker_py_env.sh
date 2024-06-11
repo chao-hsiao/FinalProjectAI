@@ -21,4 +21,4 @@ sudo usermod -aG docker ${USER}
 docker build -t my_streamlit_app .
 
 # Run the Docker container
-docker run --rm -it -p 80:8501 -v $(pwd):/app my_streamlit_app
+docker run --rm -it -p 80:80 -v $(pwd):/app my_streamlit_app
