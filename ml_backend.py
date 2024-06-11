@@ -11,7 +11,9 @@ weight_path = "mymodel_2"
 
 class ml_backend:
     def __init__(self):
-        openai.api_key = 'sk-proj-JRUnxXSKBb0TWMJ4m7Q8T3BlbkFJvxqvMjBdcvCKqC3lrT9t'  # Replace with your actual API key
+        # Read API key from a file
+        with open('PutYourAPIKeyInThisFile.txt', 'r') as file:
+            openai.api_key = file.read().strip()
         # Ensure to use the correct base URL if you are using a custom API gateway
         # openai.api_base = 'https://api.pawan.krd/v1'  # Uncomment if needed
 
