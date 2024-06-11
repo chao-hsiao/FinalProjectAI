@@ -11,7 +11,6 @@ EMAIL=$1
 # Install necessary packages and dependencies
 apt update
 apt install -y python3-pip
-apt install -y python-pip
 pip install -r requirements.txt
 
 # Create the Streamlit configuration directory

@@ -2,9 +2,7 @@
 FROM python:3.8-slim
 
 # Install Git, Git LFS, curl, and build essentials
-RUN apt-get update && \
-    chmod -x setup.sh
-    ./setup.sh your_email@example.com
+RUN apt-get update
 
 # Set the working directory
 WORKDIR /app
