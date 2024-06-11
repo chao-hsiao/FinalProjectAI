@@ -48,7 +48,7 @@ This application is designed to help university students generate emails with th
    pip install -r requirements.txt
    ```
 
-3. **Add OpenAI API Key:**
+3. **Add OpenAI API Key of GPT-3.5-turbo-instruct:**
 
    - Open the file named `PutYourAPIKeyInThisFile.txt` located in the root directory of the repository.
    - Paste your OpenAI API key into this file and save it.
