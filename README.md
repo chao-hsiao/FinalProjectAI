@@ -115,6 +115,45 @@ streamlit run emailapp.py
 
 5. Review the generated email. If you are satisfied with the content, click the "Click me to send the email" link to open Gmail with the email pre-filled.
 
+## Experimental Results
+
+### Initial Prompt
+**Prompt:**  
+"Write an email from Charlotte to classmate Ethan about exchanging research articles.”
+
+### Final Prompt
+**Transformed Prompt:**  
+“Craft an email from Charlotte to classmate Ethan about regarding exchanging research articles. Use a tone with some respect, formal, with precise and less wording. Emotes and Exaggeration is not acceptable.”
+
+### Generated Email
+**Output:**
+
+```
+Subject: Exchanging Research Articles
+
+Dear Ethan,
+
+I hope this email finds you well. I wanted to reach out to you regarding exchanging research articles for our project. I believe that sharing our resources can greatly benefit both of us in terms of expanding our knowledge and gaining a different perspective on the topic.
+
+Would it be possible for us to exchange our articles by the end of the week? Your contribution would be greatly appreciated.
+
+Thank you and have a great day.
+
+Best regards,
+Charlotte
+```
+
+### Explanation
+
+- **Initial Prompt:** The initial prompt provided a basic idea of the email content but lacked specific details and tone.
+- **Final Prompt:** The final transformed prompt included additional instructions about the tone and formality, ensuring the email is respectful and precise.
+- **Generated Email:** The generated email successfully followed the instructions from the final prompt, producing a well-structured and professional email. The subject was correctly formatted, and the body of the email maintained a formal tone without emotes or exaggeration.
+
+### Screenshot
+![Experimental Result Screenshot](img/result.png)
+
+This screenshot shows the generated email based on the given initial and final prompts.
+
 ## Troubleshooting
 
 - **Port Issues:** If you encounter issues with the application running on port 80, ensure you have the necessary permissions. You may need to run the application with `sudo`:
@@ -136,3 +175,4 @@ Feel free to fork this repository, make modifications, and submit pull requests.
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
