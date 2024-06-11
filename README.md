@@ -115,15 +115,15 @@ streamlit run emailapp.py
 
 5. Review the generated email. If you are satisfied with the content, click the "Click me to send the email" link to open Gmail with the email pre-filled.
 
-## Hyperparameters for Generating Better Prompts
+## Hyperparameters for Transforming into a Better Prompt
 
-To improve the prompt generation, we have fine-tuned the model with the following hyperparameters:
+To transform the initial prompt into a better prompt, we used the following hyperparameters for training our model:
 
 - **Batch Size:** 2
 - **Learning Rate:** 2e-5
 - **Epochs:** 10
 
-These hyperparameters were chosen to balance training efficiency and model performance.
+These hyperparameters were chosen to balance the model's performance and training time, ensuring that the generated prompts are both accurate and contextually appropriate.
 
 ## Experimental Results
 
