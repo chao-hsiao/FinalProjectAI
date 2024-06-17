@@ -2,7 +2,9 @@
 
 The model will be available on the GitHub repo after X days, due to bandwidth restriction of Git LFS Data. 
 
-```batch response: This repository is over its data quota. Account responsible for LFS bandwidth should purchase more data packs to restore access.```
+```
+batch response: This repository is over its data quota. Account responsible for LFS bandwidth should purchase more data packs to restore access.
+```
 
 After downloading the model, move it into ``` cd <repository_directory> ``` that you are going to clone.
 
